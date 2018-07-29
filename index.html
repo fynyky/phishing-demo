@@ -1,0 +1,301 @@
+<html><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SingHealth - DataCheck</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style type="text/css">
+        .modal-content {
+            background-color: #FFF;
+        }
+
+        .self-check {
+            max-width: 800px;
+            font-size: 16px;
+        }
+
+        .modal-title {
+            width: 120px;
+        }
+
+        .selfnric {
+            width: 140px;
+            color: #333;
+            font-weight: 600;
+            text-align: right;
+            float: right;
+            display: block;
+            margin-top: 53px;
+        }
+
+        .self-check .modal-content {
+            box-shadow: none;
+        }
+
+        .alert {
+            border: 1px solid rgba(0, 0, 0, .2);
+            border-radius: 10px;
+            margin: 20px 0;
+            background-color: #DBEEF4;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .alert i {
+            font-size: 28px;
+        }
+
+        .alert .msg-brd {
+            padding: 10px 0;
+        }
+
+        .btn-primary {
+            color: #ffffff;
+            background-color: #E11F26;
+            border-color: #E11F26;
+            min-width: 100px;
+        }
+
+        button.btn-otp-submit {
+            position: relative;
+        }
+
+        .self-check .modal-footer {
+            border-top: 0px;
+            padding-top: 0;
+            padding-left: 0;
+        }
+
+        .self-check .modal-footer .terms {
+            float: left;
+            width: 100%;
+            text-align: left;
+            font-size: 80%;
+            margin-top: 20px;
+        }
+
+        .self-check .modal-footer a {
+            color: #0088ff;
+            line-height: 41px;
+            font-weight: 500;
+        }
+
+        .copyright {
+            color: #a5a0a0;
+            font-size: 85%;
+            padding-top: 20px;
+            clear:both;
+        }
+
+        .fa-check-circle:before {
+            color: green;
+        }
+
+        .fa-exclamation-triangle:before {
+            color: orange;
+        }
+
+        .singpass-login {
+            color: #000;
+            background-color: #FFF;
+            border-color: #a5a0a0 !important;
+            min-width: 100px;
+        }
+
+        .header-wrapper {
+            background-color: #DBEEF4;
+            padding: 10px;
+        }
+
+        .header-message {
+            margin: 10px 0 30px 0;
+        }
+
+        .header-message-big {
+            margin: 10px 0 30px 0;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        @media screen and (max-width:450px) {
+            .col-xs-1{
+                min-width:13%
+            }
+            .col-xs-11{
+                max-width:87%   
+            }
+        }
+        .footer-banner {
+            /*background-color: #FFC000;*/
+            text-align: center;
+            padding: 15px 0;
+            max-width: 200px;
+            margin: 0 auto;
+            font-size:20px;
+        }
+
+            .footer-banner span {
+                font-size: 18px;
+                font-weight: bold;
+            }
+
+            .warp-tip{
+            max-width:440px;
+            margin:0 auto;
+            clear:both;
+        }
+
+        .blockHead:after {
+          color: #FFD800;
+            border-left: 30px solid;
+            border-top: 40px solid transparent;
+            border-bottom: 43px solid transparent;
+            display: inline-block;
+            content: '';
+            position: absolute;
+            right: -20px;
+            top: -20px;
+        }
+        .blockHead {
+          background-color: #FFD800;
+          /*width: 150px;
+          height: 40px; */
+          line-height: 16px;
+          display: inline-block;
+          position: relative;
+          clear:both;
+          display:block;
+          max-width:100px;
+          float:left;
+          padding: 5px 5px 5px 10px;
+          margin-top: 10px;
+        }
+        .blocktext {
+          color: #333;
+          font-weight: bold;
+          font-size: 12px;
+        }
+        .contHead{
+            float: left;
+            margin-left: 20px;
+            background: #BFF7FF;
+            padding: 5px 10px 10px;
+        }
+        .hxcshlogo{
+         max-width:280px;
+        }
+
+        @media screen and (max-width:490px) {
+            .hxcshlogo {
+            max-width: 245px;
+        }
+        .blockHead{
+            margin-top:5px;
+        }
+
+            
+        }
+
+        @media screen and (max-width:460px) {
+            .hxcshlogo {
+            max-width: 210px;
+        }
+        .contHead{
+            margin-top: 4px;
+        }
+        }
+
+        @media screen and (max-width:420px) {
+            .hxcshlogo{
+                max-width:150px;
+            }
+            .contHead{margin-left:15px;    padding: 5px 10px 10px 10px;margin-top:0}
+            
+            .blockHead{
+                max-width:60px;
+                padding: 4px 0;
+                text-align: center;
+                line-height:10px;
+                height: 34px;
+                margin-top:4px;
+            }
+            .blocktext{
+                font-size:9px;
+            }
+            .blockHead:after {
+            color: #FFD800;
+            border-left: 20px solid;
+            border-top: 30px solid transparent;
+            border-bottom: 30px solid transparent;
+            display: inline-block;
+            content: '';
+            position: absolute;
+            right: -15px;
+            top: -13px;
+        }
+        .warp-tip{display:flex;width:250px;text-align:center;}
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="modal-dialog self-check">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title"><img src="https://datacheck.singhealth.com.sg/Images/singhealth-logo.png" style="width:64px;"></div>
+            </div>
+            <div class="modal-body">
+
+                
+
+<div class="header-wrapper">
+    <p class="header-message-big"><strong>This service allows you to personally check and find out directly if your data has been accessed in the recent cyberattack on SingHealth.</strong></p>
+
+    <div class="text-center">
+        <button type="button" class="btn singpass-login" onclick="alert('THIS IS A SCAM SITE. Please do not enter your credentials on random webpages sent to you via SMS no matter how official they look')">
+            <img src="https://datacheck.singhealth.com.sg/Images/singpass-logo.png" style="width:68px;"> <strong>Login</strong>
+        </button>
+    </div>
+</div>
+
+                <footer>
+                        <div>
+                            <hr>
+                            <p><strong>Frequently Asked Questions</strong></p>
+                            <ol>
+                                <li>
+                                    <strong>How could this have happened? </strong>
+                                    <p>Forensic investigations have confirmed that this was a deliberate, targeted and well-planned cyberattack. It was not the work of casual hackers or criminal gangs. We have lodged a police report on the incident and the matter is currently under investigation. We apologise for the anxiety caused. Please rest assured that additional cybersecurity measures have been implemented to safeguard patients’ data.<br><br></p>
+                                </li>
+
+                                <li>
+                                    <strong>Were my electronic medical records accessed or compromised? Will my medical care be affected?</strong>
+                                    <p>All records in SingHealth’s IT system remain intact - there were no modifications or deletions to patient records. Your medical care will not be affected and there is no disruption to our services.<br><br></p>
+                                </li>
+
+                                <li>
+                                    <strong>Who can I contact if I have other questions/concerns?</strong>
+                                    <p>We would be happy to address your concerns, please contact us at <a href="mailto:check@singhealth.com.sg">check@singhealth.com.sg </a><br><br></p>
+                                </li>
+
+                            </ol>
+                        </div>
+                    <div class="copyright text-center"><p>© 2018 SingHealth Group. All Rights Reserved.</p></div>
+                </footer>
+
+            </div>
+        </div>
+    </div>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-83522234-4"></script>
+    <script>
+        var GAID = "UA-83522234-4";
+
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', GAID);
+    </script>
+
+</body></html>
